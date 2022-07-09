@@ -13,13 +13,7 @@ import requests
 class PostListView(ListAPIView):
     queryset = Post.objects.all().order_by('-created')
     serializer_class = PostSerializer
-    # renderer_classes = [TemplateHTMLRenderer]
-    # template_name = 'index.html'
-
-    # def get(self, request, *args, **kwargs):
-    #     qs = Post.objects.all()
-    #     return Response({"posts":qs})
-
+  
 
 class PostDetailView(RetrieveAPIView):
     serializer_class = PostSerializer
@@ -54,5 +48,3 @@ class PostUpdateView(RetrieveUpdateDestroyAPIView):
 class PostCreateView(ListCreateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-    #permission_classes = [IsAuthenticated]
-
