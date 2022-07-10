@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-
+from django.views.generic import TemplateView
 from .views import show_posts,create_post
 
 urlpatterns = [
     path('',show_posts,name="show_posts"),
     path('create/',create_post,name="create_post"),
+    path('api-doc/', TemplateView.as_view(template_name='swagger_template.html', extra_context={'schema_url':'api_schema'}), name='swagger-ui'),
 ]

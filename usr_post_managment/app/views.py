@@ -39,6 +39,9 @@ class PostDetailView(RetrieveAPIView):
         serializer = self.get_serializer(post)
         return Response(serializer.data)
 
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(request, *args, **kwargs)
+
 
 class PostUpdateView(RetrieveUpdateDestroyAPIView):
     queryset = Post.objects.all()
@@ -48,3 +51,8 @@ class PostUpdateView(RetrieveUpdateDestroyAPIView):
 class PostCreateView(ListCreateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+
+    def perform_create(self, serializer):
+        if serializer.is_valid():
+            serializer.save()
+        return super().perform_create(serializer)

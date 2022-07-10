@@ -10,6 +10,8 @@ http://127.0.0.1:8000/
 
 Aplikacia je rozdelená na jednoduchý FrontEnd a na Restové rozhranie, ktoré zabezpečuje DjangoRestFramework
 
+Pre API dokumentáciu prejdi na túto url adresu: http://127.0.0.1:8000/api-doc/
+
 ## Rest API
 
 V priečinku app nájdeš dva súbory s views. Jeden sa volá func_based_views.py, v ňom som používal funkcie, pretože FunctionBasedView som do teraz používal pri každom z mojich django projektov. Druhý súbor sa volá views.py a v ňom je naprogramované to isté, len som tam použil triedy, teda ClassBasedView. 
@@ -19,6 +21,7 @@ K dátam uloženým vo formáte json sa dostaneš cez následujúce url adresy
 - zobrazenie konkrétneho príspevku: http://127.0.0.1:8000/api/posts/1/ 
 - edit alebo zmazanie konkrétneho príspevku: http://127.0.0.1:8000/api/posts/1/edit/ 
 - pridávanie príspevku: http://127.0.0.1:8000/api/posts/create/
+- zobrazenie schémy pre swagger dokumentáciu: http://127.0.0.1:8000/api/schema/
 
 ## FrontEnd
 K frontendu stačí prejsť na base locallhost url http://127.0.0.1:8000/
