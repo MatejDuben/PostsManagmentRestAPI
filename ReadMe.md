@@ -1,4 +1,4 @@
-# Job interview uloha
+# Post Managment with Djanog Rest API
 Pre spustenie projektu je potrebné nainštalovať si Python knižnice príkazom
 
 ```zsh
